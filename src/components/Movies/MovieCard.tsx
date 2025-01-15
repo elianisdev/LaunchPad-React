@@ -1,4 +1,4 @@
-export const Peli = () => {
+export const MovieCard = () => {
     return (
         <>
         </>

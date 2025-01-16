@@ -49,7 +49,11 @@ const MovieList: React.FC = () => {
         <div className="container mx-auto p-4">
             <h1 className="text-3xl font-bold text-center mb-8">Popular Movies</h1>
             <div className="mb-4">
-                <select onChange={handleGenreChange} value={selectedGenre || ''} className="p-2 border rounded">
+                <select
+                    onChange={handleGenreChange}
+                    value={selectedGenre || ''}
+                    className="p-2 border rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
                     <option value="">All Genres</option>
                     {genres.map((genre) => (
                         <option key={genre.id} value={genre.id}>{genre.name}</option>

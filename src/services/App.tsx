@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { AppRouter } from './router';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MovieList from '../components/Movies/MovieList';
+import MovieDetails from '../components/Movies/MovieDetails';
 
 const App: FC = () => {
     return (
@@ -11,8 +11,10 @@ const App: FC = () => {
                     <h1 className="text-center text-2xl font-bold">Free Movies and Series</h1>
                 </header>
                 <main className="py-8">
-                    <MovieList />
-                    <AppRouter />
+                    <Routes>
+                        <Route path="/" element={<MovieList />} />
+                        <Route path="/movie/:id" element={<MovieDetails />} />
+                    </Routes>
                 </main>
             </div>
         </BrowserRouter>

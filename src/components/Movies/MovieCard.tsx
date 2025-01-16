@@ -1,22 +1,25 @@
 import React from 'react';
-
-interface Movie {
-    id: number;
-    title: string;
-    poster_path: string;
-    overview: string;
-}
+import { useNavigate } from 'react-router-dom';
 
 interface MovieCardProps {
-    movie: Movie;
+    movie: {
+        id: number;
+        title: string;
+        poster_path: string;
+    };
 }
 
-export const MovieCard: React.FC<MovieCardProps> = ({ movie }) => (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} className="w-full h-48 object-cover" />
-        <div className="p-4">
-            <h2 className="text-lg font-bold text-gray-800">{movie.title}</h2>
-            <p className="text-sm text-gray-600 mt-2">{movie.overview}</p>
+export const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`/movie/${movie.id}`);
+    };
+
+    return (
+        <div className="movie-card" onClick={handleClick}>
+            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+            <h2>{movie.title}</h2>
         </div>
-    </div>
-);
+    );
+};

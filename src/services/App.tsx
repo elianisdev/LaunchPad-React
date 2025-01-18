@@ -11,7 +11,7 @@ const App: React.FC = () => {
             <BrowserRouter>
                 <div className="bg-gray-100 min-h-screen">
                     <header className="bg-blue-600 text-white py-4">
-                        <h1 className="text-center text-2xl font-bold">Movies and Series</h1>
+                        <h1 className="text-center text-2xl font-bold">Movies and Series.</h1>
                         <nav className="text-center">
                             <Link to="/" className="mx-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition duration-300">Home</Link>
                             <Link to="/favorites" className="mx-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition duration-300">Favorites</Link>
